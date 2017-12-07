@@ -12,6 +12,10 @@
 		71E631CE1FD9355E000C1448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E631CC1FD9355E000C1448 /* Main.storyboard */; };
 		71E631D01FD9355E000C1448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71E631CF1FD9355E000C1448 /* Assets.xcassets */; };
 		71E631D31FD9355E000C1448 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E631D11FD9355E000C1448 /* LaunchScreen.storyboard */; };
+		71E631DC1FD93597000C1448 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631DB1FD93597000C1448 /* GradientLayer.swift */; };
+		71E631DE1FD935BC000C1448 /* UIGradientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631DD1FD935BC000C1448 /* UIGradientHelper.swift */; };
+		71E631E01FD935DB000C1448 /* UIGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631DF1FD935DB000C1448 /* UIGradientExtension.swift */; };
+		71E631E21FD93625000C1448 /* UIGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631E11FD93625000C1448 /* UIGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		71E631CF1FD9355E000C1448 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71E631D21FD9355E000C1448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71E631D41FD9355E000C1448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71E631DB1FD93597000C1448 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
+		71E631DD1FD935BC000C1448 /* UIGradientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientHelper.swift; sourceTree = "<group>"; };
+		71E631DF1FD935DB000C1448 /* UIGradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientExtension.swift; sourceTree = "<group>"; };
+		71E631E11FD93625000C1448 /* UIGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 		71E631BC1FD9355E000C1448 = {
 			isa = PBXGroup;
 			children = (
+				71E631DA1FD93579000C1448 /* Sources */,
 				71E631C71FD9355E000C1448 /* UIGradientExample */,
 				71E631C61FD9355E000C1448 /* Products */,
 			);
@@ -62,6 +71,17 @@
 				71E631D41FD9355E000C1448 /* Info.plist */,
 			);
 			path = UIGradientExample;
+			sourceTree = "<group>";
+		};
+		71E631DA1FD93579000C1448 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				71E631DB1FD93597000C1448 /* GradientLayer.swift */,
+				71E631DD1FD935BC000C1448 /* UIGradientHelper.swift */,
+				71E631DF1FD935DB000C1448 /* UIGradientExtension.swift */,
+				71E631E11FD93625000C1448 /* UIGradient.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				71E631CB1FD9355E000C1448 /* ViewController.swift in Sources */,
+				71E631DE1FD935BC000C1448 /* UIGradientHelper.swift in Sources */,
+				71E631E01FD935DB000C1448 /* UIGradientExtension.swift in Sources */,
+				71E631E21FD93625000C1448 /* UIGradient.swift in Sources */,
 				71E631C91FD9355E000C1448 /* AppDelegate.swift in Sources */,
+				71E631DC1FD93597000C1448 /* GradientLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +301,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH46VD9229;
 				INFOPLIST_FILE = UIGradientExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dqhieu.UIGradientExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -292,10 +317,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH46VD9229;
 				INFOPLIST_FILE = UIGradientExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dqhieu.UIGradientExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
