@@ -126,9 +126,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "identifier", for: indexPath)
-        cell.contentView.addGradient(gradients[indexPath.row].gradient)
-        cell.layer.cornerRadius = 10
-        cell.clipsToBounds = true
+        let gradientPattern = gradients[indexPath.row]
+        cell.contentView.backgroundColor = UIColor.fromGradient(gradientPattern.gradient, frame: cell.contentView.frame, cornerRadius: 10)
         return cell
     }
 }

@@ -31,8 +31,9 @@ class GradientViewController: UIViewController {
         
         lblGradientName = UILabel()
         lblGradientName.text = gradientPattern.name
-        lblGradientName.textColor = UIColor.fromGradient(gradientPattern.gradient, frame: CGRect(origin: .zero, size: lblGradientName.sizeThatFits(.zero)))
-        lblGradientName.frame = CGRect(x: 0, y: imageView.frame.origin.y - 20, width: self.view.frame.width, height: 20)
+        lblGradientName.frame = CGRect(origin: .zero, size: lblGradientName.sizeThatFits(.zero))
+        lblGradientName.textColor = UIColor.fromGradient(gradientPattern.gradient, frame: lblGradientName.frame)
+        lblGradientName.center.y = imageView.center.y - imageView.frame.height / 2 - 20
         lblGradientName.center.x = imageView.center.x
         self.view.addSubview(lblGradientName)
         
@@ -43,7 +44,8 @@ class GradientViewController: UIViewController {
         
         lblGradientColors = UILabel()
         lblGradientColors.attributedText = fromColorsText
-        lblGradientColors.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: 20)
+        lblGradientColors.frame = CGRect(x: 0, y: imageView.frame.origin.y + imageView.frame.size.height + 10, width: self.view.frame.width, height: 20)
+        lblGradientColors.textAlignment = .center
         self.view.addSubview(lblGradientColors)
     }
     
