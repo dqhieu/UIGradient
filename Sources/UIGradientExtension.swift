@@ -15,9 +15,11 @@ public extension UIView {
         self.addGradient(gradientLayer)
     }
     
-    public func addGradient(_ gradientLayer: GradientLayer) {
-        gradientLayer.frame = self.bounds
-        self.layer.addSublayer(gradientLayer)
+    public func addGradient(_ gradientLayer: GradientLayer, cornerRadius: CGFloat = 0) {
+        let cloneGradient = gradientLayer.clone()
+        cloneGradient.frame = self.bounds
+        cloneGradient.cornerRadius = cornerRadius
+        self.layer.addSublayer(cloneGradient)
     }
 }
 
@@ -31,8 +33,8 @@ public extension UIColor {
                        alpha: alpha)
     }
     
-    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect) -> UIColor? {
-        guard let image = UIImage.fromGradient(gradient, frame: frame) else { return nil }
+    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIColor? {
+        guard let image = UIImage.fromGradient(gradient, frame: frame, cornerRadius: cornerRadius) else { return nil }
         return UIColor(patternImage: image)
     }
     
@@ -44,11 +46,13 @@ public extension UIColor {
 
 public extension UIImage {
     
-    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect) -> UIImage? {
+    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main.scale)
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
-        gradient.frame = frame
-        gradient.render(in: ctx)
+        let cloneGradient = gradient.clone()
+        cloneGradient.frame = frame
+        cloneGradient.cornerRadius = cornerRadius
+        cloneGradient.render(in: ctx)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
         return image
