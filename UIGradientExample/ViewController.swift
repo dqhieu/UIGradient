@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
+    var backgroundView: UIView = UIView()
+    var zoomedView: UIView = UIView()
+    var lblGradientName: UILabel = UILabel()
+    var lblGradientColors: UILabel = UILabel()
+    var cellOriginFrame: CGRect?
+    
     func initCollecitonView() {
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: FlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,10 +61,79 @@ class ViewController: UIViewController {
         ]
     }
     
+    func initGradientViews() {
+        backgroundView.frame = self.view.frame
+        backgroundView.backgroundColor = UIColor.black
+        backgroundView.isHidden = true
+        self.view.addSubview(backgroundView)
+        lblGradientName.isHidden = true
+        self.view.addSubview(lblGradientName)
+        lblGradientColors.isHidden = true
+        self.view.addSubview(lblGradientColors)
+        zoomedView.isHidden = true
+        zoomedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(zoomOutCell)))
+        self.view.addSubview(zoomedView)
+    }
+    
+    func setupGradientViews(gradientPattern: GradientPattern) {
+        lblGradientName.text = gradientPattern.name
+        lblGradientName.frame = CGRect(origin: .zero, size: lblGradientName.sizeThatFits(.zero))
+        lblGradientName.textColor = UIColor.fromGradient(gradientPattern.gradient, frame: lblGradientName.frame)
+        lblGradientName.center.y = self.view.center.y - self.view.frame.width * 4 / 5 / 2 - 20
+        lblGradientName.center.x = self.view.center.x
+        
+        let fromColorsText = NSMutableAttributedString(string: "", attributes: nil)
+        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.fromColor)", attributes: [NSForegroundColorAttributeName : UIColor.hex(gradientPattern.fromColor)]))
+        fromColorsText.append(NSAttributedString(string: " → ", attributes: [NSForegroundColorAttributeName : UIColor.white]))
+        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.toColor)", attributes: [NSForegroundColorAttributeName : UIColor.hex(gradientPattern.toColor)]))
+        
+        lblGradientColors.attributedText = fromColorsText
+        lblGradientColors.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)
+        lblGradientColors.center.y = self.view.center.y + self.view.frame.width * 4 / 5 / 2 + 20
+        lblGradientColors.center.x = self.view.center.x
+        lblGradientColors.textAlignment = .center
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initGradientImages()
         initCollecitonView()
+        initGradientViews()
+    }
+    
+    func zoomInCell(startingFrame: CGRect, gradientPattern: GradientPattern) {
+        zoomedView.isHidden = false
+        backgroundView.isHidden = false
+        backgroundView.alpha = 0
+        zoomedView.frame = startingFrame
+        setupGradientViews(gradientPattern: gradientPattern)
+        UIView.animate(withDuration: 0.2, animations: {
+            let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
+            let y = self.view.frame.height / 2 - height / 2
+            let endingFrame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+            self.zoomedView.frame = endingFrame
+            self.zoomedView.backgroundColor = UIColor.fromGradient(gradientPattern.gradient, frame: endingFrame, cornerRadius: 10)
+        }, completion: { (_) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.backgroundView.alpha = 1
+                self.lblGradientColors.isHidden = false
+                self.lblGradientName.isHidden = false
+            }, completion: nil)
+        })
+    }
+    
+    @objc func zoomOutCell() {
+        if let startingFrame = self.cellOriginFrame {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.zoomedView.frame = startingFrame
+                self.backgroundView.alpha = 0
+                self.lblGradientColors.isHidden = true
+                self.lblGradientName.isHidden = true
+            }) { (_) in
+                self.backgroundView.isHidden = true
+                self.zoomedView.isHidden = true
+            }
+        }
     }
 }
 
@@ -118,16 +193,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return gradients.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = GradientViewController()
-        vc.gradientPattern = self.gradients[indexPath.row]
-        self.present(vc, animated: true, completion: nil)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "identifier", for: indexPath)
         let gradientPattern = gradients[indexPath.row]
         cell.contentView.backgroundColor = UIColor.fromGradient(gradientPattern.gradient, frame: cell.contentView.frame, cornerRadius: 10)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        if let startingFrame = cell.contentView.superview?.convert(cell.contentView.frame, to: nil) {
+            self.cellOriginFrame = startingFrame
+            self.zoomInCell(startingFrame: startingFrame, gradientPattern: self.gradients[indexPath.row])
+        }
+    }
+    
 }
