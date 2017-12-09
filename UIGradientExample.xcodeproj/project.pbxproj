@@ -16,6 +16,8 @@
 		71E631DE1FD935BC000C1448 /* UIGradientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631DD1FD935BC000C1448 /* UIGradientHelper.swift */; };
 		71E631E01FD935DB000C1448 /* UIGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631DF1FD935DB000C1448 /* UIGradientExtension.swift */; };
 		71E631E21FD93625000C1448 /* UIGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E631E11FD93625000C1448 /* UIGradient.swift */; };
+		71E85D0A1FDB988700AED2CA /* GradientPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E85D091FDB988700AED2CA /* GradientPattern.swift */; };
+		71E85D0C1FDBA11800AED2CA /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E85D0B1FDBA11800AED2CA /* GradientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		71E631DD1FD935BC000C1448 /* UIGradientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientHelper.swift; sourceTree = "<group>"; };
 		71E631DF1FD935DB000C1448 /* UIGradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientExtension.swift; sourceTree = "<group>"; };
 		71E631E11FD93625000C1448 /* UIGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradient.swift; sourceTree = "<group>"; };
+		71E85D091FDB988700AED2CA /* GradientPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPattern.swift; sourceTree = "<group>"; };
+		71E85D0B1FDBA11800AED2CA /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			children = (
 				71E631C81FD9355E000C1448 /* AppDelegate.swift */,
 				71E631CA1FD9355E000C1448 /* ViewController.swift */,
+				71E85D091FDB988700AED2CA /* GradientPattern.swift */,
+				71E85D0B1FDBA11800AED2CA /* GradientViewController.swift */,
 				71E631CC1FD9355E000C1448 /* Main.storyboard */,
 				71E631CF1FD9355E000C1448 /* Assets.xcassets */,
 				71E631D11FD9355E000C1448 /* LaunchScreen.storyboard */,
@@ -160,6 +166,8 @@
 				71E631DE1FD935BC000C1448 /* UIGradientHelper.swift in Sources */,
 				71E631E01FD935DB000C1448 /* UIGradientExtension.swift in Sources */,
 				71E631E21FD93625000C1448 /* UIGradient.swift in Sources */,
+				71E85D0C1FDBA11800AED2CA /* GradientViewController.swift in Sources */,
+				71E85D0A1FDB988700AED2CA /* GradientPattern.swift in Sources */,
 				71E631C91FD9355E000C1448 /* AppDelegate.swift in Sources */,
 				71E631DC1FD93597000C1448 /* GradientLayer.swift in Sources */,
 			);
