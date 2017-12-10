@@ -4,7 +4,7 @@
 <a href="https://github.com/dqhieu/UIGradient"><img src="Images/UIGradientExample.png" width="300" /></a>
 
 
-![Platform](https://img.shields.io/cocoapods/p/UIGradient.svg?style=flat)![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg)![Version](https://img.shields.io/cocoapods/v/UIGradient.svg?style=flat)![License](https://img.shields.io/cocoapods/l/UIGradient.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/UIGradient.svg?style=flat) ![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg) ![Version](https://img.shields.io/cocoapods/v/UIGradient.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/UIGradient.svg?style=flat)
 </p>
 
 ## Installation
@@ -19,9 +19,9 @@ Create a GradientLayer then add it to your view's
 ```swift
 public extension UIView {
 
-	public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0)
+    public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0)
 
-	public func addGradient(_ gradientLayer: GradientLayer, cornerRadius: CGFloat = 0)
+    public func addGradient(_ gradientLayer: GradientLayer, cornerRadius: CGFloat = 0)
 	
 }
 ```
@@ -29,7 +29,6 @@ Example
 ```swift
 let gradient = GradientLayer(direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0)
 view.addGradient(gradient)
-//view.layer.addSublayer(gradient)
 ```
 UIGradient supports those directions below:
 ```swift
@@ -48,20 +47,20 @@ public enum GradientDirection {
 You can also create a GradientLayer clone instance using this function:
 ```swift
 open class GradientLayer: CAGradientLayer {
-	...
-	public final func clone() -> GradientLayer
-	...
+    ...
+    public final func clone() -> GradientLayer
+    ...
 }
 ```
 
 ### Gradient color
-UIGradient allow you create gradient color
+UIGradient allows you create gradient color
 ```swift
 public extension UIColor {
 
-	public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIColor?
+    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIColor?
 	
-	public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIColor?
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIColor?
 	
 }
 ```
@@ -78,13 +77,13 @@ label.textColor = UIColor.fromGradient(gradient, frame: frame)
 ```
 
 ### Gradient image
-UIGradient also allow you create gradient image
+UIGradient also allows you create gradient image
 ```swift
 public extension UIImage {
 
-	public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIImage?
+    public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIImage?
 	
-	public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIImage?
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIImage?
 	
 }
 ```
