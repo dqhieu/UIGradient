@@ -4,7 +4,7 @@
 <a href="https://github.com/dqhieu/UIGradient"><img src="Images/UIGradientExample.png" width="300" /></a>
 
 
-![Platform](https://img.shields.io/cocoapods/p/UIGradient.svg?style=flat) ![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg) ![Version](https://img.shields.io/cocoapods/v/UIGradient.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/UIGradient.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/UIGradient.svg?style=flat) ![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg) ![Version](https://img.shields.io/cocoapods/v/UIGradient.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/UIGradient.svg?style=flat)
 </p>
 
 ## Installation
