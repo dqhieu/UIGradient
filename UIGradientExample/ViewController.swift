@@ -83,9 +83,9 @@ class ViewController: UIViewController {
         lblGradientName.center.x = self.view.center.x
         
         let fromColorsText = NSMutableAttributedString(string: "", attributes: nil)
-        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.fromColor)", attributes: [NSForegroundColorAttributeName : UIColor.hex(gradientPattern.fromColor)]))
-        fromColorsText.append(NSAttributedString(string: " → ", attributes: [NSForegroundColorAttributeName : UIColor.white]))
-        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.toColor)", attributes: [NSForegroundColorAttributeName : UIColor.hex(gradientPattern.toColor)]))
+        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.fromColor)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(gradientPattern.fromColor)]))
+        fromColorsText.append(NSAttributedString(string: " → ", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white]))
+        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.toColor)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(gradientPattern.toColor)]))
         
         lblGradientColors.attributedText = fromColorsText
         lblGradientColors.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)
