@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "UIGradient"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A simple and powerful library for using gradient image, color"
   s.homepage     = "https://github.com/dqhieu/UIGradient"
   s.license      = { :type => "MIT", :file => "LICENSE" }

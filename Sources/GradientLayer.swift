@@ -25,6 +25,7 @@ open class GradientLayer: CAGradientLayer {
     
     public init(direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0) {
         super.init()
+        self.direction = direction
         self.needsDisplayOnBoundsChange = true
         self.colors = colors.map { $0.cgColor as Any }
         let (startPoint, endPoint) = GradientKitHelper.getStartEndPointOf(direction)
