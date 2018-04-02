@@ -22,7 +22,7 @@ open class GradientKitHelper {
         case .topLeftToBottomRight:
             return (CGPoint.zero, CGPoint(x: 1.0, y: 1.0))
         case .topRightToBottomLeft:
-            return (CGPoint(x: 0.1, y: 0.0), CGPoint(x: 0.0, y: 1.0))
+            return (CGPoint(x: 1.0, y: 0.0), CGPoint(x: 0.0, y: 1.0))
         case .bottomLeftToTopRight:
             return (CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0))
         case .bottomRightToTopLeft:
