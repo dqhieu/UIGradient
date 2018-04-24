@@ -83,14 +83,14 @@ class ViewController: UIViewController {
         lblGradientName.center.y = self.view.center.y - self.view.frame.width * 4 / 5 / 2 - 20
         lblGradientName.center.x = self.view.center.x
 
-        let fromColorsText = gradientPattern.fromColors.reduce(NSMutableAttributedString(string: "", attributes: nil), { result, color in
+        let fromColorsText = gradientPattern.fromColors.reduce(NSMutableAttributedString(string: "", attributes: nil)) { result, color in
             let item = NSAttributedString(string: "#\(color)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(color)])
             result.append(item)
             if color != gradientPattern.fromColors.last {
                 result.append(NSAttributedString(string: " → ", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white]))
             }
             return result
-        })
+        }
         
         lblGradientColors.attributedText = fromColorsText
         lblGradientColors.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)

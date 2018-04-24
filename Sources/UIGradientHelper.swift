@@ -92,12 +92,14 @@ open class GradientKitHelper {
 }
 
 extension Int {
+
     func degreesToRads() -> Double {
         return (Double(self) * .pi / 180)
     }
 }
 
 extension CGPoint {
+
     func opposite() -> CGPoint {
         // Create New Point
         var oppositePoint = CGPoint()
@@ -110,4 +112,3 @@ extension CGPoint {
         return oppositePoint
     }
 }
-
