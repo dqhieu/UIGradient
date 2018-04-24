@@ -10,14 +10,12 @@ import UIKit
 
 class GradientPattern: NSObject {
     var name: String
-    var fromColor: String
-    var toColor: String
+    var fromColors: [String]
     var gradient: GradientLayer
     
-    init(name: String, fromColor: String, toColor: String, gradient: GradientLayer) {
+    init(name: String, fromColors: [String], gradient: GradientLayer) {
         self.name = name
-        self.fromColor = fromColor
-        self.toColor = toColor
+        self.fromColors = fromColors
         self.gradient = gradient
     }
 }
