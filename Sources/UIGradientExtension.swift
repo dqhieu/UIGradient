@@ -10,8 +10,8 @@ import UIKit
 
 public extension UIView {
     
-    public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0) {
-        let gradientLayer = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius)
+    public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) {
+        let gradientLayer = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius, locations: locations)
         self.addGradient(gradientLayer)
     }
     
@@ -38,8 +38,8 @@ public extension UIColor {
         return UIColor(patternImage: image)
     }
     
-    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIColor? {
-        let gradient = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius)
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) -> UIColor? {
+        let gradient = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius, locations: locations)
         return UIColor.fromGradient(gradient, frame: frame)
     }
 }
@@ -58,8 +58,8 @@ public extension UIImage {
         return image
     }
     
-    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIImage? {
-        let gradient = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius)
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) -> UIImage? {
+        let gradient = GradientLayer(direction: direction, colors: colors, cornerRadius: cornerRadius, locations: locations)
         return UIImage.fromGradient(gradient, frame: frame)
     }
 }
