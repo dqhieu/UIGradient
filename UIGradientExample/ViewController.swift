@@ -34,30 +34,31 @@ class ViewController: UIViewController {
     
     func initGradientImages() {
         gradients = [
-            GradientPattern(name: "Ocean Blue", fromColor: "2E3192", toColor: "1BFFFF", gradient: GradientLayer.oceanBlue),
-            GradientPattern(name: "Sanguine", fromColor: "D4145A", toColor: "FBB03B", gradient: GradientLayer.sanguine),
-            GradientPattern(name: "Luscious Lime", fromColor: "009245", toColor: "FCEE21", gradient: GradientLayer.lusciousLime),
-            GradientPattern(name: "Purple Lake", fromColor: "662D8C", toColor: "ED1E79", gradient: GradientLayer.purpleLake),
-            GradientPattern(name: "Fresh Papaya", fromColor: "ED1C24", toColor: "FCEE21", gradient: GradientLayer.freshPapaya),
-            GradientPattern(name: "Ultramarine", fromColor: "00A8C5", toColor: "FFFF7E", gradient: GradientLayer.ultramarine),
-            GradientPattern(name: "Pink Sugar", fromColor: "D74177", toColor: "FFE98A", gradient: GradientLayer.pinkSugar),
-            GradientPattern(name: "Lemon Drizzle", fromColor: "FB872B", toColor: "D9E021", gradient: GradientLayer.lemonDrizzle),
-            GradientPattern(name: "Victoria Purple", fromColor: "312A6C", toColor: "852D91", gradient: GradientLayer.victoriaPurple),
-            GradientPattern(name: "Spring Greens", fromColor: "009E00", toColor: "FFFF96", gradient: GradientLayer.springGreens),
-            GradientPattern(name: "Mystic Mauve", fromColor: "B066FE", toColor: "63E2FF", gradient: GradientLayer.mysticMauve),
-            GradientPattern(name: "Reflex Silver", fromColor: "808080", toColor: "E6E6E6", gradient: GradientLayer.reflexSilver),
-            GradientPattern(name: "Neon Glow", fromColor: "00FFA1", toColor: "00FFFF", gradient: GradientLayer.neonGlow),
-            GradientPattern(name: "Berry Smoothie", fromColor: "8E78FF", toColor: "FC7D7B", gradient: GradientLayer.berrySmoothie),
-            GradientPattern(name: "New Leaf", fromColor: "00537E", toColor: "3AA17E", gradient: GradientLayer.newLeaf),
-            GradientPattern(name: "Cotton Candy", fromColor: "FCA5F1", toColor: "B5FFFF", gradient: GradientLayer.cottonCandy),
-            GradientPattern(name: "Pixie Dust", fromColor: "D585FF", toColor: "00FFEE", gradient: GradientLayer.pixieDust),
-            GradientPattern(name: "Fizzy Peach", fromColor: "F24645", toColor: "EBC08D", gradient: GradientLayer.fizzyPeach),
-            GradientPattern(name: "Sweet Dream", fromColor: "3A3897", toColor: "A3A1FF", gradient: GradientLayer.sweetDream),
-            GradientPattern(name: "Firebrick", fromColor: "45145A", toColor: "FF5300", gradient: GradientLayer.firebrick),
-            GradientPattern(name: "Wrought Iron", fromColor: "333333", toColor: "5A5454", gradient: GradientLayer.wroughtIron),
-            GradientPattern(name: "Deep Sea", fromColor: "4F00BC", toColor: "29ABE2", gradient: GradientLayer.deepSea),
-            GradientPattern(name: "Coastal Breeze", fromColor: "00B7FF", toColor: "FFFFC7", gradient: GradientLayer.coastalBreeze),
-            GradientPattern(name: "Evening Delight", fromColor: "93278F", toColor: "00A99D", gradient: GradientLayer.eveningDelight)
+            GradientPattern(name: "Ocean Blue", fromColors: ["2E3192", "1BFFFF"], gradient: GradientLayer.oceanBlue),
+            GradientPattern(name: "Sanguine", fromColors: ["D4145A", "FBB03B"], gradient: GradientLayer.sanguine),
+            GradientPattern(name: "Luscious Lime", fromColors: ["009245", "FCEE21"], gradient: GradientLayer.lusciousLime),
+            GradientPattern(name: "Purple Lake", fromColors: ["662D8C", "ED1E79"], gradient: GradientLayer.purpleLake),
+            GradientPattern(name: "Fresh Papaya", fromColors: ["ED1C24", "FCEE21"], gradient: GradientLayer.freshPapaya),
+            GradientPattern(name: "Ultramarine", fromColors: ["00A8C5", "FFFF7E"], gradient: GradientLayer.ultramarine),
+            GradientPattern(name: "Pink Sugar", fromColors: ["D74177", "FFE98A"], gradient: GradientLayer.pinkSugar),
+            GradientPattern(name: "Lemon Drizzle", fromColors: ["FB872B", "D9E021"], gradient: GradientLayer.lemonDrizzle),
+            GradientPattern(name: "Victoria Purple", fromColors: ["312A6C", "852D91"], gradient: GradientLayer.victoriaPurple),
+            GradientPattern(name: "Spring Greens", fromColors: ["009E00", "FFFF96"], gradient: GradientLayer.springGreens),
+            GradientPattern(name: "Mystic Mauve", fromColors: ["B066FE", "63E2FF"], gradient: GradientLayer.mysticMauve),
+            GradientPattern(name: "Reflex Silver", fromColors: ["808080", "E6E6E6"], gradient: GradientLayer.reflexSilver),
+            GradientPattern(name: "Neon Glow", fromColors: ["00FFA1", "00FFFF"], gradient: GradientLayer.neonGlow),
+            GradientPattern(name: "Berry Smoothie", fromColors: ["8E78FF", "FC7D7B"], gradient: GradientLayer.berrySmoothie),
+            GradientPattern(name: "New Leaf", fromColors: ["00537E", "3AA17E"], gradient: GradientLayer.newLeaf),
+            GradientPattern(name: "Cotton Candy", fromColors: ["FCA5F1", "B5FFFF"], gradient: GradientLayer.cottonCandy),
+            GradientPattern(name: "Pixie Dust", fromColors: ["D585FF", "00FFEE"], gradient: GradientLayer.pixieDust),
+            GradientPattern(name: "Fizzy Peach", fromColors: ["F24645", "EBC08D"], gradient: GradientLayer.fizzyPeach),
+            GradientPattern(name: "Sweet Dream", fromColors: ["3A3897", "A3A1FF"], gradient: GradientLayer.sweetDream),
+            GradientPattern(name: "Firebrick", fromColors: ["45145A", "FF5300"], gradient: GradientLayer.firebrick),
+            GradientPattern(name: "Wrought Iron", fromColors: ["333333", "5A5454"], gradient: GradientLayer.wroughtIron),
+            GradientPattern(name: "Deep Sea", fromColors: ["4F00BC", "29ABE2"], gradient: GradientLayer.deepSea),
+            GradientPattern(name: "Coastal Breeze", fromColors: ["00B7FF", "FFFFC7"], gradient: GradientLayer.coastalBreeze),
+            GradientPattern(name: "Evening Delight", fromColors: ["93278F", "00A99D"], gradient: GradientLayer.eveningDelight),
+            GradientPattern(name: "Argon", fromColors: ["03001e", "7303c0", "ec38bc", "fdeff9"], gradient: GradientLayer(direction: .custom(77), colors: [UIColor.hex("03001e"), UIColor.hex("7303c0"), UIColor.hex("ec38bc"), UIColor.hex("fdeff9")], locations: [0.0, 0.33, 0.66, 1.0]))
         ]
     }
     
@@ -81,11 +82,15 @@ class ViewController: UIViewController {
         lblGradientName.textColor = UIColor.fromGradient(gradientPattern.gradient, frame: lblGradientName.frame)
         lblGradientName.center.y = self.view.center.y - self.view.frame.width * 4 / 5 / 2 - 20
         lblGradientName.center.x = self.view.center.x
-        
-        let fromColorsText = NSMutableAttributedString(string: "", attributes: nil)
-        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.fromColor)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(gradientPattern.fromColor)]))
-        fromColorsText.append(NSAttributedString(string: " → ", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white]))
-        fromColorsText.append(NSAttributedString(string: "#\(gradientPattern.toColor)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(gradientPattern.toColor)]))
+
+        let fromColorsText = gradientPattern.fromColors.reduce(NSMutableAttributedString(string: "", attributes: nil)) { result, color in
+            let item = NSAttributedString(string: "#\(color)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(color)])
+            result.append(item)
+            if color != gradientPattern.fromColors.last {
+                result.append(NSAttributedString(string: " → ", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white]))
+            }
+            return result
+        }
         
         lblGradientColors.attributedText = fromColorsText
         lblGradientColors.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)

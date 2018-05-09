@@ -17,13 +17,14 @@ public enum GradientDirection {
     case topRightToBottomLeft
     case bottomLeftToTopRight
     case bottomRightToTopLeft
+    case custom(Int)
 }
 
 open class GradientLayer: CAGradientLayer {
-    
+
     private var direction: GradientDirection = .bottomLeftToTopRight
-    
-    public init(direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0) {
+
+    public init(direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) {
         super.init()
         self.direction = direction
         self.needsDisplayOnBoundsChange = true
@@ -32,6 +33,7 @@ open class GradientLayer: CAGradientLayer {
         self.startPoint = startPoint
         self.endPoint = endPoint
         self.cornerRadius = cornerRadius
+        self.locations = locations?.map { NSNumber(value: $0) }
     }
     
     public override init(layer: Any) {
@@ -44,9 +46,9 @@ open class GradientLayer: CAGradientLayer {
     
     public final func clone() -> GradientLayer {
         if let colors = self.colors {
-            return GradientLayer(direction: self.direction, colors: colors.map { UIColor.init(cgColor: $0 as! CGColor) }, cornerRadius: self.cornerRadius)
+            return GradientLayer(direction: self.direction, colors: colors.map { UIColor.init(cgColor: ($0 as! CGColor)) }, cornerRadius: self.cornerRadius, locations: self.locations?.map { $0.doubleValue } )
         }
-        return GradientLayer(direction: self.direction, colors: [], cornerRadius: self.cornerRadius)
+        return GradientLayer(direction: self.direction, colors: [], cornerRadius: self.cornerRadius, locations: self.locations?.map { $0.doubleValue })
     }
 }
 
