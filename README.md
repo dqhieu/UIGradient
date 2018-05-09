@@ -19,7 +19,7 @@ Create a GradientLayer then add it to your view's
 ```swift
 public extension UIView {
 
-    public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0)
+    public func addGradientWithDirection(_ direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil)
 
     public func addGradient(_ gradientLayer: GradientLayer, cornerRadius: CGFloat = 0)
 	
@@ -27,7 +27,7 @@ public extension UIView {
 ```
 Example
 ```swift
-let gradient = GradientLayer(direction: GradientDirection, colors: [UIColor], cornerRadius: CGFloat = 0)
+let gradient = GradientLayer(direction: GradientDirection, colors: [UIColor])
 view.addGradient(gradient)
 ```
 UIGradient supports those directions below:
@@ -60,7 +60,7 @@ public extension UIColor {
 
     public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIColor?
 	
-    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIColor?
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) -> UIColor?
 	
 }
 ```
@@ -83,7 +83,7 @@ public extension UIImage {
 
     public static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIImage?
 	
-    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0) -> UIImage?
+    public static func fromGradientWithDirection(_ direction: GradientDirection, frame: CGRect, colors: [UIColor], cornerRadius: CGFloat = 0, locations: [Double]? = nil) -> UIImage?
 	
 }
 ```
