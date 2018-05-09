@@ -29,7 +29,7 @@ open class GradientLayer: CAGradientLayer {
         self.direction = direction
         self.needsDisplayOnBoundsChange = true
         self.colors = colors.map { $0.cgColor as Any }
-        let (startPoint, endPoint) = GradientKitHelper.getStartEndPointOf(direction)
+        let (startPoint, endPoint) = UIGradientHelper.getStartAndEndPointsOf(direction)
         self.startPoint = startPoint
         self.endPoint = endPoint
         self.cornerRadius = cornerRadius
@@ -46,7 +46,7 @@ open class GradientLayer: CAGradientLayer {
     
     public final func clone() -> GradientLayer {
         if let colors = self.colors {
-            return GradientLayer(direction: self.direction, colors: colors.map { UIColor.init(cgColor: ($0 as! CGColor)) }, cornerRadius: self.cornerRadius, locations: self.locations?.map { $0.doubleValue } )
+            return GradientLayer(direction: self.direction, colors: colors.map { UIColor(cgColor: ($0 as! CGColor)) }, cornerRadius: self.cornerRadius, locations: self.locations?.map { $0.doubleValue } )
         }
         return GradientLayer(direction: self.direction, colors: [], cornerRadius: self.cornerRadius, locations: self.locations?.map { $0.doubleValue })
     }

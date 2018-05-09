@@ -8,8 +8,8 @@
 
 import UIKit
 
-open class GradientKitHelper {
-    open static func getStartEndPointOf(_ gradientDirection: GradientDirection) -> (startPoint: CGPoint, endPoint: CGPoint) {
+open class UIGradientHelper {
+    open static func getStartAndEndPointsOf(_ gradientDirection: GradientDirection) -> (startPoint: CGPoint, endPoint: CGPoint) {
         switch gradientDirection {
         case .topToBottom:
             return (CGPoint(x: 0.5, y: 0.0), CGPoint(x: 0.5, y: 1.0))
@@ -32,18 +32,18 @@ open class GradientKitHelper {
         }
     }
 
-    static func startAndEndPoints(from angle: Int) -> (startPoint:CGPoint, endPoint:CGPoint) {
-// Set default points for angle of 0°
-        var startPointX:CGFloat = 0.5
-        var startPointY:CGFloat = 1.0
+    open static func startAndEndPoints(from angle: Int) -> (startPoint:CGPoint, endPoint:CGPoint) {
+        // Set default points for angle of 0°
+        var startPointX: CGFloat = 0.5
+        var startPointY: CGFloat = 1.0
 
-// Define point objects
-        var startPoint:CGPoint
-        var endPoint:CGPoint
+        // Define point objects
+        var startPoint: CGPoint
+        var endPoint: CGPoint
 
-// Define points
+        // Define points
         switch true {
-// Define known points
+        // Define known points
         case angle == 0:
             startPointX = 0.5
             startPointY = 1.0
@@ -68,7 +68,7 @@ open class GradientKitHelper {
         case angle == 315:
             startPointX = 1.0
             startPointY = 1.0
-// Define calculated points
+        // Define calculated points
         case angle > 315 || angle < 45:
             startPointX = 0.5 - CGFloat(tan(angle.degreesToRads()) * 0.5)
             startPointY = 1.0
@@ -83,10 +83,10 @@ open class GradientKitHelper {
             startPointY = 0.5 - CGFloat(tan(270.degreesToRads() - angle.degreesToRads()) * 0.5)
         default: break
         }
-// Build return CGPoints
+        // Build return CGPoints
         startPoint = CGPoint(x: startPointX, y: startPointY)
         endPoint = startPoint.opposite()
-// Return CGPoints
+        // Return CGPoints
         return (startPoint, endPoint)
     }
 }
