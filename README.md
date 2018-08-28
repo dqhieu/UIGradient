@@ -10,7 +10,7 @@
 ## Installation
 UIGradient is now available on CocoaPods. Simply add the following to your project Podfile, and you'll be good to go.
 ```ruby
-pod 'UIGradient', '~> 1.1.2'
+pod 'UIGradient', '~> 1.2.0'
 ```
 
 ## Usage
