@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: FlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor.white
-        collectionView.contentInset = UIEdgeInsetsMake(20, 1, 0, 1)
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 1, bottom: 0, right: 1)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "identifier")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -84,10 +84,10 @@ class ViewController: UIViewController {
         lblGradientName.center.x = self.view.center.x
 
         let fromColorsText = gradientPattern.fromColors.reduce(NSMutableAttributedString(string: "", attributes: nil)) { result, color in
-            let item = NSAttributedString(string: "#\(color)", attributes: [NSAttributedStringKey.foregroundColor : UIColor.hex(color)])
+            let item = NSAttributedString(string: "#\(color)", attributes: [.foregroundColor : UIColor.hex(color)])
             result.append(item)
             if color != gradientPattern.fromColors.last {
-                result.append(NSAttributedString(string: " → ", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white]))
+                result.append(NSAttributedString(string: " → ", attributes: [.foregroundColor: UIColor.white]))
             }
             return result
         }
