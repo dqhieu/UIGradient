@@ -8,10 +8,10 @@
 </p>
 
 ## Installation
-UIGradient is now available on CocoaPods. Simply add the following to your project Podfile, and you'll be good to go.
-```ruby
-pod 'UIGradient'
-```
+### SPM
+Add `https://github.com/sindresorhus/Defaults` to Swift Package Manager tab in Xcode
+### Cocoapods
+Add `pod 'UIGradient'` to your Podfile
 
 ## Usage
 ### GradientLayer
@@ -108,7 +108,7 @@ let purpleLakeGradient 		= GradientLayer.purpleLake
 You can explore them in my example project.
 
 ## Author
-UIGradient was created by **Đinh Quang Hiếu** (dqhieu13@gmail.com) in 2017 using Swift. If you found any problem please create issue or pull request to help me improve this open source project. Thanks!
+UIGradient was created by **Đinh Quang Hiếu** in 2017 using Swift. If you found any problem please create issue or pull request to help me improve this open source project. Thanks!
 
 ## License
 UIGradient is released and distributed under the terms and conditions of the MIT license.
