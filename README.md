@@ -9,7 +9,7 @@
 
 ## Installation
 ### SPM
-Add `https://github.com/sindresorhus/Defaults` to Swift Package Manager tab in Xcode
+Add `https://github.com/dqhieu/UIGradient.git` to Swift Package Manager tab in Xcode
 ### Cocoapods
 Add `pod 'UIGradient'` to your Podfile
 
