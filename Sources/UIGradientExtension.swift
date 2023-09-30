@@ -47,6 +47,9 @@ public extension UIColor {
 public extension UIImage {
     
     static func fromGradient(_ gradient: GradientLayer, frame: CGRect, cornerRadius: CGFloat = 0) -> UIImage? {
+        
+        guard frame.size.width > 0 && frame.size.height > 0 else { return nil }
+        
         UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main.scale)
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
         let cloneGradient = gradient.clone()
